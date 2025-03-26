@@ -2,6 +2,10 @@
 
 Ce projet est une API développée avec Symfony et API Platform pour la gestion d'une clinique vétérinaire. L'API gère les utilisateurs, les animaux, les rendez-vous et les traitements.
 
+## Membres du groupe
+
+- BOUDJEMELINE Haider Rayan
+
 ## Installation
 
 ### 1. Cloner le projet
