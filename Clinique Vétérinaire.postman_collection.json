@@ -1,0 +1,6058 @@
+{
+	"info": {
+		"_postman_id": "434ba1aa-59b0-4b44-b849-ac2efd8657b8",
+		"name": "Clinique Vétérinaire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42228034"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "animals",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Retrieves a Animal resource.",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Animal identifier"
+												}
+											]
+										},
+										"description": "Retrieves a Animal resource."
+									},
+									"response": [
+										{
+											"name": "Animal resource",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "//api/animals/:id",
+													"path": [
+														"",
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"species\": \"<string>\",\n  \"birthDate\": \"<dateTime>\",\n  \"photo\": \"<string,null-iri-reference>\",\n  \"appointments\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"owner\": \"<string,null-iri-reference>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Replaces the Animal resource.",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "species",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "birthDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "appointments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Animal identifier"
+												}
+											]
+										},
+										"description": "Replaces the Animal resource."
+									},
+									"response": [
+										{
+											"name": "Animal resource updated",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "species",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "birthDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "photo",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "appointments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "owner",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "//api/animals/:id",
+													"path": [
+														"",
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"species\": \"<string>\",\n  \"birthDate\": \"<dateTime>\",\n  \"photo\": \"<string,null-iri-reference>\",\n  \"appointments\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"owner\": \"<string,null-iri-reference>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "species",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "birthDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "photo",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "appointments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "owner",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "species",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "birthDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "photo",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "appointments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "owner",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "species",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "birthDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "photo",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "appointments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "owner",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "An error occurred",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "species",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "birthDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "photo",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "appointments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "owner",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Removes the Animal resource.",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/animals/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"animals",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Animal identifier"
+												}
+											]
+										},
+										"description": "Removes the Animal resource."
+									},
+									"response": [
+										{
+											"name": "Animal resource deleted",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "//api/animals/:id",
+													"path": [
+														"",
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/animals/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"animals",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Animal identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieves the collection of Animal resources.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/animals?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"animals"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The collection page number"
+										}
+									]
+								},
+								"description": "Retrieves the collection of Animal resources."
+							},
+							"response": [
+								{
+									"name": "Animal collection",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "//api/animals?page=1",
+											"path": [
+												"",
+												"api",
+												"animals"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"species\": \"<string>\",\n    \"birthDate\": \"<dateTime>\",\n    \"photo\": \"<string,null-iri-reference>\",\n    \"appointments\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"owner\": \"<string,null-iri-reference>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"species\": \"<string>\",\n    \"birthDate\": \"<dateTime>\",\n    \"photo\": \"<string,null-iri-reference>\",\n    \"appointments\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"owner\": \"<string,null-iri-reference>\"\n  }\n]"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/animals?page=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"animals"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Creates a Animal resource.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "species",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "birthDate",
+											"value": "<dateTime>",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"value": "<string,null-iri-reference>",
+											"type": "text"
+										},
+										{
+											"key": "appointments",
+											"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+											"type": "text"
+										},
+										{
+											"key": "owner",
+											"value": "<string,null-iri-reference>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/animals",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"animals"
+									]
+								},
+								"description": "Creates a Animal resource."
+							},
+							"response": [
+								{
+									"name": "Animal resource created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "species",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "birthDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "appointments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "//api/animals",
+											"path": [
+												"",
+												"api",
+												"animals"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"species\": \"<string>\",\n  \"birthDate\": \"<dateTime>\",\n  \"photo\": \"<string,null-iri-reference>\",\n  \"appointments\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"owner\": \"<string,null-iri-reference>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "species",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "birthDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "appointments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/animals",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"animals"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "species",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "birthDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "appointments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/animals",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"animals"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "An error occurred",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "species",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "birthDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "photo",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "appointments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "owner",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/animals",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"animals"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "media",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Retrieves a Media resource.",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/media/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"media",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Media identifier"
+												}
+											]
+										},
+										"description": "Retrieves a Media resource."
+									},
+									"response": [
+										{
+											"name": "Media resource",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "//api/media/:id",
+													"path": [
+														"",
+														"api",
+														"media",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Media identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"path\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/media/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"media",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Media identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/media/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"media",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Media identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Removes the Media resource.",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/media/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"media",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Media identifier"
+												}
+											]
+										},
+										"description": "Removes the Media resource."
+									},
+									"response": [
+										{
+											"name": "Media resource deleted",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "//api/media/:id",
+													"path": [
+														"",
+														"api",
+														"media",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Media identifier"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/media/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"media",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Media identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/media/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"media",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Media identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieves the collection of Media resources.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/media?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"media"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The collection page number"
+										}
+									]
+								},
+								"description": "Retrieves the collection of Media resources."
+							},
+							"response": [
+								{
+									"name": "Media collection",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "//api/media?page=1",
+											"path": [
+												"",
+												"api",
+												"media"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"path\": \"<string>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"path\": \"<string>\"\n  }\n]"
+								}
+							]
+						},
+						{
+							"name": "Creates a Media resource.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "path",
+											"value": "<string>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/media",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"media"
+									]
+								},
+								"description": "Creates a Media resource."
+							},
+							"response": [
+								{
+									"name": "Media resource created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "path",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/media",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"media"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"path\": \"<string>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "path",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/media",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"media"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "path",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/media",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"media"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "An error occurred",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "path",
+													"value": "<string>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/media",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"media"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "rendez_vouses",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Retrieves a RendezVous resource.",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) RendezVous identifier"
+												}
+											]
+										},
+										"description": "Retrieves a RendezVous resource."
+									},
+									"response": [
+										{
+											"name": "RendezVous resource",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"appointmentDate\": \"<dateTime>\",\n  \"reason\": \"<string>\",\n  \"status\": \"<string>\",\n  \"animal\": \"<iri-reference>\",\n  \"assistant\": \"<string,null-iri-reference>\",\n  \"veterinarian\": \"<string,null-iri-reference>\",\n  \"treatments\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"isPaid\": \"<boolean>\",\n  \"paid\": \"<boolean,null>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Replaces the RendezVous resource.",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "createdAt",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "appointmentDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "reason",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "animal",
+													"value": "<iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "assistant",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "veterinarian",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "treatments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "isPaid",
+													"value": "<boolean>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) RendezVous identifier"
+												}
+											]
+										},
+										"description": "Replaces the RendezVous resource."
+									},
+									"response": [
+										{
+											"name": "RendezVous resource updated",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "createdAt",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "appointmentDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "reason",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "status",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "animal",
+															"value": "<iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "assistant",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "veterinarian",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "treatments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "isPaid",
+															"value": "<boolean>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"appointmentDate\": \"<dateTime>\",\n  \"reason\": \"<string>\",\n  \"status\": \"<string>\",\n  \"animal\": \"<iri-reference>\",\n  \"assistant\": \"<string,null-iri-reference>\",\n  \"veterinarian\": \"<string,null-iri-reference>\",\n  \"treatments\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"isPaid\": \"<boolean>\",\n  \"paid\": \"<boolean,null>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "createdAt",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "appointmentDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "reason",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "status",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "animal",
+															"value": "<iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "assistant",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "veterinarian",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "treatments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "isPaid",
+															"value": "<boolean>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "createdAt",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "appointmentDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "reason",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "status",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "animal",
+															"value": "<iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "assistant",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "veterinarian",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "treatments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "isPaid",
+															"value": "<boolean>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "createdAt",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "appointmentDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "reason",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "status",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "animal",
+															"value": "<iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "assistant",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "veterinarian",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "treatments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "isPaid",
+															"value": "<boolean>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "An error occurred",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "createdAt",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "appointmentDate",
+															"value": "<dateTime>",
+															"type": "text"
+														},
+														{
+															"key": "reason",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "status",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "animal",
+															"value": "<iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "assistant",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "veterinarian",
+															"value": "<string,null-iri-reference>",
+															"type": "text"
+														},
+														{
+															"key": "treatments",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "isPaid",
+															"value": "<boolean>",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Removes the RendezVous resource.",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) RendezVous identifier"
+												}
+											]
+										},
+										"description": "Removes the RendezVous resource."
+									},
+									"response": [
+										{
+											"name": "RendezVous resource deleted",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/rendez_vouses/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"rendez_vouses",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) RendezVous identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieves the collection of RendezVous resources.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/rendez_vouses?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"rendez_vouses"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The collection page number"
+										}
+									]
+								},
+								"description": "Retrieves the collection of RendezVous resources."
+							},
+							"response": [
+								{
+									"name": "RendezVous collection",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses?page=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"appointmentDate\": \"<dateTime>\",\n    \"reason\": \"<string>\",\n    \"status\": \"<string>\",\n    \"animal\": \"<iri-reference>\",\n    \"assistant\": \"<string,null-iri-reference>\",\n    \"veterinarian\": \"<string,null-iri-reference>\",\n    \"treatments\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"isPaid\": \"<boolean>\",\n    \"paid\": \"<boolean,null>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"createdAt\": \"<dateTime>\",\n    \"appointmentDate\": \"<dateTime>\",\n    \"reason\": \"<string>\",\n    \"status\": \"<string>\",\n    \"animal\": \"<iri-reference>\",\n    \"assistant\": \"<string,null-iri-reference>\",\n    \"veterinarian\": \"<string,null-iri-reference>\",\n    \"treatments\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"isPaid\": \"<boolean>\",\n    \"paid\": \"<boolean,null>\"\n  }\n]"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses?page=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Creates a RendezVous resource.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "createdAt",
+											"value": "<dateTime>",
+											"type": "text"
+										},
+										{
+											"key": "appointmentDate",
+											"value": "<dateTime>",
+											"type": "text"
+										},
+										{
+											"key": "reason",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "animal",
+											"value": "<iri-reference>",
+											"type": "text"
+										},
+										{
+											"key": "assistant",
+											"value": "<string,null-iri-reference>",
+											"type": "text"
+										},
+										{
+											"key": "veterinarian",
+											"value": "<string,null-iri-reference>",
+											"type": "text"
+										},
+										{
+											"key": "treatments",
+											"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+											"type": "text"
+										},
+										{
+											"key": "isPaid",
+											"value": "<boolean>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/rendez_vouses",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"rendez_vouses"
+									]
+								},
+								"description": "Creates a RendezVous resource."
+							},
+							"response": [
+								{
+									"name": "RendezVous resource created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "createdAt",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "appointmentDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "reason",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "animal",
+													"value": "<iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "assistant",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "veterinarian",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "treatments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "isPaid",
+													"value": "<boolean>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"createdAt\": \"<dateTime>\",\n  \"appointmentDate\": \"<dateTime>\",\n  \"reason\": \"<string>\",\n  \"status\": \"<string>\",\n  \"animal\": \"<iri-reference>\",\n  \"assistant\": \"<string,null-iri-reference>\",\n  \"veterinarian\": \"<string,null-iri-reference>\",\n  \"treatments\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"isPaid\": \"<boolean>\",\n  \"paid\": \"<boolean,null>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "createdAt",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "appointmentDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "reason",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "animal",
+													"value": "<iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "assistant",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "veterinarian",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "treatments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "isPaid",
+													"value": "<boolean>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "createdAt",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "appointmentDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "reason",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "animal",
+													"value": "<iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "assistant",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "veterinarian",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "treatments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "isPaid",
+													"value": "<boolean>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "An error occurred",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "createdAt",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "appointmentDate",
+													"value": "<dateTime>",
+													"type": "text"
+												},
+												{
+													"key": "reason",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "animal",
+													"value": "<iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "assistant",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "veterinarian",
+													"value": "<string,null-iri-reference>",
+													"type": "text"
+												},
+												{
+													"key": "treatments",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "isPaid",
+													"value": "<boolean>",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/rendez_vouses",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"rendez_vouses"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "traitements",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Retrieves a Traitement resource.",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/traitements/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"traitements",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Traitement identifier"
+												}
+											]
+										},
+										"description": "Retrieves a Traitement resource."
+									},
+									"response": [
+										{
+											"name": "Traitement resource",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "//api/traitements/:id",
+													"path": [
+														"",
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<string>\",\n  \"duration\": \"<integer>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Replaces the Traitement resource.",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "duration",
+													"value": "<integer>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/traitements/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"traitements",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Traitement identifier"
+												}
+											]
+										},
+										"description": "Replaces the Traitement resource."
+									},
+									"response": [
+										{
+											"name": "Traitement resource updated",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "description",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "duration",
+															"value": "<integer>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "//api/traitements/:id",
+													"path": [
+														"",
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<string>\",\n  \"duration\": \"<integer>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "description",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "duration",
+															"value": "<integer>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "description",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "duration",
+															"value": "<integer>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "description",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "duration",
+															"value": "<integer>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "An error occurred",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "name",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "description",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "duration",
+															"value": "<integer>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Removes the Traitement resource.",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/traitements/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"traitements",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) Traitement identifier"
+												}
+											]
+										},
+										"description": "Removes the Traitement resource."
+									},
+									"response": [
+										{
+											"name": "Traitement resource deleted",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "//api/traitements/:id",
+													"path": [
+														"",
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/traitements/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"traitements",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) Traitement identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieves the collection of Traitement resources.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/traitements?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"traitements"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The collection page number"
+										}
+									]
+								},
+								"description": "Retrieves the collection of Traitement resources."
+							},
+							"response": [
+								{
+									"name": "Traitement collection",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "//api/traitements?page=1",
+											"path": [
+												"",
+												"api",
+												"traitements"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<string>\",\n    \"duration\": \"<integer>\",\n    \"rendezVouses\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ]\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<string>\",\n    \"duration\": \"<integer>\",\n    \"rendezVouses\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ]\n  }\n]"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/traitements?page=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"traitements"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Creates a Traitement resource.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "<integer>",
+											"type": "text"
+										},
+										{
+											"key": "rendezVouses",
+											"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/traitements",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"traitements"
+									]
+								},
+								"description": "Creates a Traitement resource."
+							},
+							"response": [
+								{
+									"name": "Traitement resource created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "duration",
+													"value": "<integer>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "//api/traitements",
+											"path": [
+												"",
+												"api",
+												"traitements"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<string>\",\n  \"duration\": \"<integer>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "duration",
+													"value": "<integer>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/traitements",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"traitements"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "duration",
+													"value": "<integer>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/traitements",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"traitements"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "An error occurred",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "description",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "duration",
+													"value": "<integer>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/traitements",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"traitements"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Retrieves a User resource.",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) User identifier"
+												}
+											]
+										},
+										"description": "Retrieves a User resource."
+									},
+									"response": [
+										{
+											"name": "User resource",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "//api/users/:id",
+													"path": [
+														"",
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"userIdentifier\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Replaces the User resource.",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "roles",
+													"value": "[\"<string>\",\"<string>\"]",
+													"description": "The user roles",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "<string>",
+													"description": "The hashed password",
+													"type": "text"
+												},
+												{
+													"key": "plainPassword",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "animals",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) User identifier"
+												}
+											]
+										},
+										"description": "Replaces the User resource."
+									},
+									"response": [
+										{
+											"name": "User resource updated",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "roles",
+															"value": "[\"<string>\",\"<string>\"]",
+															"description": "The user roles",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "<string>",
+															"description": "The hashed password",
+															"type": "text"
+														},
+														{
+															"key": "plainPassword",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "firstName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "lastName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "animals",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "//api/users/:id",
+													"path": [
+														"",
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"userIdentifier\": \"<string>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "roles",
+															"value": "[\"<string>\",\"<string>\"]",
+															"description": "The user roles",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "<string>",
+															"description": "The hashed password",
+															"type": "text"
+														},
+														{
+															"key": "plainPassword",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "firstName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "lastName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "animals",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "roles",
+															"value": "[\"<string>\",\"<string>\"]",
+															"description": "The user roles",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "<string>",
+															"description": "The hashed password",
+															"type": "text"
+														},
+														{
+															"key": "plainPassword",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "firstName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "lastName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "animals",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "roles",
+															"value": "[\"<string>\",\"<string>\"]",
+															"description": "The user roles",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "<string>",
+															"description": "The hashed password",
+															"type": "text"
+														},
+														{
+															"key": "plainPassword",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "firstName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "lastName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "animals",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "An error occurred",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "email",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "roles",
+															"value": "[\"<string>\",\"<string>\"]",
+															"description": "The user roles",
+															"type": "text"
+														},
+														{
+															"key": "password",
+															"value": "<string>",
+															"description": "The hashed password",
+															"type": "text"
+														},
+														{
+															"key": "plainPassword",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "firstName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "lastName",
+															"value": "<string>",
+															"type": "text"
+														},
+														{
+															"key": "rendezVouses",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														},
+														{
+															"key": "animals",
+															"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Removes the User resource.",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) User identifier"
+												}
+											]
+										},
+										"description": "Removes the User resource."
+									},
+									"response": [
+										{
+											"name": "User resource deleted",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "//api/users/:id",
+													"path": [
+														"",
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Updates the User resource.",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/merge-patch+json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<string>",
+													"description": "(Required) User identifier"
+												}
+											]
+										},
+										"description": "Updates the User resource."
+									},
+									"response": [
+										{
+											"name": "User resource updated",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/users/:id",
+													"path": [
+														"",
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"userIdentifier\": \"<string>\"\n}"
+										},
+										{
+											"name": "Invalid input",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Forbidden",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "Not found",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Not Found",
+											"code": 404,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+										},
+										{
+											"name": "An error occurred",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/problem+json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/users/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"users",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) User identifier"
+														}
+													]
+												}
+											},
+											"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+											"code": 422,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/problem+json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Retrieves the collection of User resources.",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/users?page=1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "The collection page number"
+										}
+									]
+								},
+								"description": "Retrieves the collection of User resources."
+							},
+							"response": [
+								{
+									"name": "User collection",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "//api/users?page=1",
+											"path": [
+												"",
+												"api",
+												"users"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<integer>\",\n    \"email\": \"<string>\",\n    \"roles\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"password\": \"<string>\",\n    \"plainPassword\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"rendezVouses\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"animals\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"userIdentifier\": \"<string>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"email\": \"<string>\",\n    \"roles\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"password\": \"<string>\",\n    \"plainPassword\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"rendezVouses\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"animals\": [\n      \"<iri-reference>\",\n      \"<iri-reference>\"\n    ],\n    \"userIdentifier\": \"<string>\"\n  }\n]"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/users?page=1",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Creates a User resource.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "roles",
+											"value": "[\"<string>\",\"<string>\"]",
+											"description": "The user roles",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "<string>",
+											"description": "The hashed password",
+											"type": "text"
+										},
+										{
+											"key": "plainPassword",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "firstName",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "lastName",
+											"value": "<string>",
+											"type": "text"
+										},
+										{
+											"key": "rendezVouses",
+											"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+											"type": "text"
+										},
+										{
+											"key": "animals",
+											"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								},
+								"description": "Creates a User resource."
+							},
+							"response": [
+								{
+									"name": "User resource created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "roles",
+													"value": "[\"<string>\",\"<string>\"]",
+													"description": "The user roles",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "<string>",
+													"description": "The hashed password",
+													"type": "text"
+												},
+												{
+													"key": "plainPassword",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "animals",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "//api/users",
+											"path": [
+												"",
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"password\": \"<string>\",\n  \"plainPassword\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"rendezVouses\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"animals\": [\n    \"<iri-reference>\",\n    \"<iri-reference>\"\n  ],\n  \"userIdentifier\": \"<string>\"\n}"
+								},
+								{
+									"name": "Invalid input",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "roles",
+													"value": "[\"<string>\",\"<string>\"]",
+													"description": "The user roles",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "<string>",
+													"description": "The hashed password",
+													"type": "text"
+												},
+												{
+													"key": "plainPassword",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "animals",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "roles",
+													"value": "[\"<string>\",\"<string>\"]",
+													"description": "The user roles",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "<string>",
+													"description": "The hashed password",
+													"type": "text"
+												},
+												{
+													"key": "plainPassword",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "animals",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"title\": \"<string,null>\",\n  \"detail\": \"<string,null>\",\n  \"status\": 400,\n  \"instance\": \"<string,null>\",\n  \"type\": \"<string>\"\n}"
+								},
+								{
+									"name": "An error occurred",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/problem+json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "email",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "roles",
+													"value": "[\"<string>\",\"<string>\"]",
+													"description": "The user roles",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "<string>",
+													"description": "The hashed password",
+													"type": "text"
+												},
+												{
+													"key": "plainPassword",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "firstName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "lastName",
+													"value": "<string>",
+													"type": "text"
+												},
+												{
+													"key": "rendezVouses",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												},
+												{
+													"key": "animals",
+													"value": "[\"<iri-reference>\",\"<iri-reference>\"]",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/users",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/problem+json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"status\": 422,\n  \"violations\": [\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"propertyPath\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ],\n  \"detail\": \"<string>\",\n  \"type\": \"<string>\",\n  \"title\": \"<string,null>\",\n  \"instance\": \"<string,null>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Creates a user token.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@vet.fr\",\n  \"password\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						},
+						"description": "Creates a user token."
+					},
+					"response": [
+						{
+							"name": "User token created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "//auth",
+									"path": [
+										"",
+										"auth"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"token\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/",
+			"type": "string"
+		}
+	]
+}
