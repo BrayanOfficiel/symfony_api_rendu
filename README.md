@@ -23,7 +23,7 @@ composer install
 
 ### 3. Configurer l'environnement
 
-Dupliquer le fichier `.env` en `.env.local` et modifier la ligne de connexion à la base de données :
+Modifier la ligne de connexion à la base de données :
 
 ```env
 DATABASE_URL="mysql://root:root@127.0.0.1:3306/iim_api_veterinaire"
